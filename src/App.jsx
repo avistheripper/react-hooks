@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Toggle } from './Toggle';
 import { ToggleState } from './ToggleUseState';
 
 const App = () => {
   const [name, setName] = useState('');
+  useEffect(() => {
+    document.title = name;
+  });
   return (
     <div className="main-wrapper">
       <h1>Level Up Dishes</h1>
@@ -12,7 +15,6 @@ const App = () => {
         <h3>Controlled state of SFC {name}</h3>
         <form onSubmit={(e) => {
           e.preventDefault();
-          formSubmit(name, setName);
         }}>
           <input
             type="text"
@@ -26,9 +28,9 @@ const App = () => {
   );
 };
 
-const formSubmit = (value, setValue) => {
-  console.log(`Email sent to ${value}!`);
-  setValue('');
-}
+// const formSubmit = (value, setValue) => {
+//   console.log(`Email sent to ${value}!`);
+//   setValue('');
+// }
 
 export default App;
