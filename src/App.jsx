@@ -2,6 +2,7 @@ import React, { useRef, createContext }from 'react';
 import { Toggle } from './Toggle';
 import { ToggleState } from './ToggleUseState';
 import { useTitleInput } from './hooks/useTitleInput';
+import { Counter } from './Counter';
 
 export const UserContext = createContext();
 
@@ -9,15 +10,11 @@ const App = () => {
   const [name, setName] = useTitleInput('');
   const ref = useRef();
   return (
-    <UserContext.Provider
-      value={{
-        user: false
-      }}
-    >
       <div className="main-wrapper" ref={ref}>
       <h1>Level Up Dishes</h1>
-      <Toggle />
       <ToggleState />
+      <hr/>
+      <Counter />
         <h3>Controlled state of SFC {name}</h3>
         <form onSubmit={(e) => {
           e.preventDefault();
@@ -31,7 +28,6 @@ const App = () => {
         </form>
         <br/>
       </div>
-    </UserContext.Provider>
   );
 };
 
