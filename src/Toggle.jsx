@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 
 export class Toggle extends Component {
     state = {

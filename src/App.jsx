@@ -1,13 +1,20 @@
-import React, { useRef }from 'react';
+import React, { useRef, createContext }from 'react';
 import { Toggle } from './Toggle';
 import { ToggleState } from './ToggleUseState';
 import { useTitleInput } from './hooks/useTitleInput';
+
+export const UserContext = createContext();
 
 const App = () => {
   const [name, setName] = useTitleInput('');
   const ref = useRef();
   return (
-    <div className="main-wrapper" ref={ref}>
+    <UserContext.Provider
+      value={{
+        user: false
+      }}
+    >
+      <div className="main-wrapper" ref={ref}>
       <h1>Level Up Dishes</h1>
       <Toggle />
       <ToggleState />
@@ -22,8 +29,9 @@ const App = () => {
           />
           <button>Submit</button>
         </form>
-      <br/>
-    </div>
+        <br/>
+      </div>
+    </UserContext.Provider>
   );
 };
 
