@@ -1,5 +1,4 @@
-import React, { useRef, createContext }from 'react';
-import { Toggle } from './Toggle';
+import React, { useRef, createContext, useMemo }from 'react';
 import { ToggleState } from './ToggleUseState';
 import { useTitleInput } from './hooks/useTitleInput';
 import { Counter } from './Counter';
@@ -9,9 +8,21 @@ export const UserContext = createContext();
 const App = () => {
   const [name, setName] = useTitleInput('');
   const ref = useRef();
+
+  const title = 'Level Up Dishes'
+
+  const reverseWord = (str) => {
+    console.log('FIRED');
+    return str
+    .split('')
+    .reverse()
+    .join('');
+  }
+
+  const titleReversed = useMemo(() => reverseWord(title), [title]);
   return (
       <div className="main-wrapper" ref={ref}>
-      <h1>Level Up Dishes</h1>
+      <h1>{ titleReversed }</h1>
       <ToggleState />
       <hr/>
       <Counter />

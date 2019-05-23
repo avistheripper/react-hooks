@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react'
-import { UserContext } from './App';
+import React, { useState } from 'react'
 
 export const ToggleState = () => {
     const [ isToggled, toggle ] = useState(false);
