@@ -1,7 +1,5 @@
 import { useState, useEffect, useDebugValue } from 'react';
 
-
-
 export function useTitleInput(initialValue: string) {
     const [value, setValue] = useState(initialValue);
     useEffect(() => {

@@ -1,14 +1,19 @@
 import React, { Component, useContext } from "react";
 
-export class Toggle extends Component {
+interface IState {
+    isToggled: boolean;
+}
+
+
+export class Toggle extends Component<IState> {
     state = {
         isToggled: false
     }
 
     toggle = () => {
-        this.setState((state) => {
-            return { isToggled: !state.isToggled }
-        })
+        // this.setState((state) => {
+        //     return { isToggled: !state.isToggled }
+        // })
     }
     render() {
         return (

@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 const initialState = { count: 0 };
 
-function reducer(state = initialState, action) {
+function reducer(state = initialState, action: any) {
     switch(action.type){
         case 'add':
             return {

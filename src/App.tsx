@@ -33,8 +33,6 @@ export const App: React.FC<IProps> = () => {
         }}>
           <input
             type="text"
-            onChange={e => setName(e.target.value)}
-            value={name}
           />
           <button>Submit</button>
         </form>
