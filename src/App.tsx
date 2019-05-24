@@ -1,17 +1,18 @@
-import React, { useRef, createContext, useMemo }from 'react';
+import React, { useRef, createContext, useMemo, RefForwardingComponent }from 'react';
 import { ToggleState } from './ToggleUseState';
 import { useTitleInput } from './hooks/useTitleInput';
 import { Counter } from './Counter';
 
-export const UserContext = createContext();
+interface IProps {
 
-const App = () => {
+}
+export const App: React.FC<IProps> = () => {
   const [name, setName] = useTitleInput('');
   const ref = useRef();
 
   const title = 'Level Up Dishes'
 
-  const reverseWord = (str) => {
+  const reverseWord = (str: string) => {
     console.log('FIRED');
     return str
     .split('')
@@ -21,7 +22,7 @@ const App = () => {
 
   const titleReversed = useMemo(() => reverseWord(title), [title]);
   return (
-      <div className="main-wrapper" ref={ref}>
+      <div className="main-wrapper">
       <h1>{ titleReversed }</h1>
       <ToggleState />
       <hr/>
@@ -46,5 +47,3 @@ const App = () => {
 //   console.log(`Email sent to ${value}!`);
 //   setValue('');
 // }
-
-export default App;
