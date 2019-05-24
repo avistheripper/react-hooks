@@ -4,22 +4,18 @@ import { useTitleInput } from './hooks/useTitleInput';
 import { Counter } from './Counter';
 
 interface IProps {
-
+  // add when needed
 }
 
 export const App: React.FC<IProps> = () => {
   const [name, setName] = useTitleInput('');
-  const ref = useRef();
 
   const title = 'Level Up Dishes'
 
-  const reverseWord = (str: string) => {
-    console.log('FIRED');
-    return str
-    .split('')
-    .reverse()
-    .join('');
-  }
+  const reverseWord = (str: string) => str
+      .split('')
+      .reverse()
+      .join('');
 
   const titleReversed = useMemo(() => reverseWord(title), [title]);
   return (
