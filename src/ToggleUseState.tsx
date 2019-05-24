@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
-export const ToggleState = () => {
-    const [ isToggled, toggle ] = useState(false);
+
+export const ToggleState: React.FC = () => {
+    const [ isToggled, toggle ] = useState<boolean | null>(false);
     return (
         <div>
             <button onClick={() => toggle(!isToggled)}>Toggle</button>

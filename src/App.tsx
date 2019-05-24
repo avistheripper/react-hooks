@@ -6,6 +6,7 @@ import { Counter } from './Counter';
 interface IProps {
 
 }
+
 export const App: React.FC<IProps> = () => {
   const [name, setName] = useTitleInput('');
   const ref = useRef();
