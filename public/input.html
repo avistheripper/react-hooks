@@ -1,0 +1,14 @@
+<script>
+    function submitForm() {
+      var noteTitle = document.getElementById('noteName').value;
+      window.parent.postMessage(noteTitle, '*');
+
+    }
+  </script>
+<body>
+    <h1>Note panel</h1>
+    <form onsubmit="submitForm()">
+        <input type="text" id='noteName' required>
+        <button type="submit">Add note</button>
+    </form>
+</body>
