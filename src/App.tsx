@@ -5,7 +5,7 @@ import Iframe from "react-iframe";
 interface PropsType {}
 
 export const App: React.SFC<PropsType> = () => {
-  const HOST_URL = "http://localhost:3001";
+  const HOST_URL = "http://localhost:3000";
   const defaultIframeHeight = 250;
 
   const getIframe = (selector: string): HTMLIFrameElement =>
